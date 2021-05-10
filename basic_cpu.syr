@@ -1,0 +1,883 @@
+Release 14.7 - xst P.20131013 (nt64)
+Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+--> Parameter TMPDIR set to xst/projnav.tmp
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.25 secs
+ 
+--> Parameter xsthdpdir set to xst
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.25 secs
+ 
+--> Reading design: basic_cpu.prj
+
+TABLE OF CONTENTS
+  1) Synthesis Options Summary
+  2) HDL Parsing
+  3) HDL Elaboration
+  4) HDL Synthesis
+       4.1) HDL Synthesis Report
+  5) Advanced HDL Synthesis
+       5.1) Advanced HDL Synthesis Report
+  6) Low Level Synthesis
+  7) Partition Report
+  8) Design Summary
+       8.1) Primitive and Black Box Usage
+       8.2) Device utilization summary
+       8.3) Partition Resource Summary
+       8.4) Timing Report
+            8.4.1) Clock Information
+            8.4.2) Asynchronous Control Signals Information
+            8.4.3) Timing Summary
+            8.4.4) Timing Details
+            8.4.5) Cross Clock Domains Report
+
+
+=========================================================================
+*                      Synthesis Options Summary                        *
+=========================================================================
+---- Source Parameters
+Input File Name                    : "basic_cpu.prj"
+Ignore Synthesis Constraint File   : NO
+
+---- Target Parameters
+Output File Name                   : "basic_cpu"
+Output Format                      : NGC
+Target Device                      : xc6slx4-3-tqg144
+
+---- Source Options
+Top Module Name                    : basic_cpu
+Automatic FSM Extraction           : YES
+FSM Encoding Algorithm             : Auto
+Safe Implementation                : No
+FSM Style                          : LUT
+RAM Extraction                     : Yes
+RAM Style                          : Auto
+ROM Extraction                     : Yes
+Shift Register Extraction          : YES
+ROM Style                          : Auto
+Resource Sharing                   : YES
+Asynchronous To Synchronous        : NO
+Shift Register Minimum Size        : 2
+Use DSP Block                      : Auto
+Automatic Register Balancing       : No
+
+---- Target Options
+LUT Combining                      : Auto
+Reduce Control Sets                : Auto
+Add IO Buffers                     : YES
+Global Maximum Fanout              : 100000
+Add Generic Clock Buffer(BUFG)     : 16
+Register Duplication               : YES
+Optimize Instantiated Primitives   : NO
+Use Clock Enable                   : Auto
+Use Synchronous Set                : Auto
+Use Synchronous Reset              : Auto
+Pack IO Registers into IOBs        : Auto
+Equivalent register Removal        : YES
+
+---- General Options
+Optimization Goal                  : Speed
+Optimization Effort                : 1
+Power Reduction                    : NO
+Keep Hierarchy                     : No
+Netlist Hierarchy                  : As_Optimized
+RTL Output                         : Yes
+Global Optimization                : AllClockNets
+Read Cores                         : YES
+Write Timing Constraints           : NO
+Cross Clock Analysis               : NO
+Hierarchy Separator                : /
+Bus Delimiter                      : <>
+Case Specifier                     : Maintain
+Slice Utilization Ratio            : 100
+BRAM Utilization Ratio             : 100
+DSP48 Utilization Ratio            : 100
+Auto BRAM Packing                  : NO
+Slice Utilization Ratio Delta      : 5
+
+=========================================================================
+
+
+=========================================================================
+*                          HDL Parsing                                  *
+=========================================================================
+Parsing VHDL file "F:\FPGA\UC_LED_WYSWEITLACZ_V2\uC_led_wyswietlacz\basic_cpu.vhd" into library work
+Parsing entity <basic_cpu>.
+Parsing architecture <Behavioral> of entity <basic_cpu>.
+
+=========================================================================
+*                            HDL Elaboration                            *
+=========================================================================
+
+Elaborating entity <basic_cpu> (architecture <Behavioral>) with generics from library <work>.
+WARNING:HDLCompiler:92 - "F:\FPGA\UC_LED_WYSWEITLACZ_V2\uC_led_wyswietlacz\basic_cpu.vhd" Line 113: io should be on the sensitivity list of the process
+WARNING:HDLCompiler:871 - "F:\FPGA\UC_LED_WYSWEITLACZ_V2\uC_led_wyswietlacz\basic_cpu.vhd" Line 113: Using initial value 0 for sys_prs since it is never assigned
+WARNING:HDLCompiler:92 - "F:\FPGA\UC_LED_WYSWEITLACZ_V2\uC_led_wyswietlacz\basic_cpu.vhd" Line 131: io should be on the sensitivity list of the process
+WARNING:HDLCompiler:871 - "F:\FPGA\UC_LED_WYSWEITLACZ_V2\uC_led_wyswietlacz\basic_cpu.vhd" Line 132: Using initial value 0 for tim_prs_int since it is never assigned
+WARNING:HDLCompiler:1127 - "F:\FPGA\UC_LED_WYSWEITLACZ_V2\uC_led_wyswietlacz\basic_cpu.vhd" Line 130: Assignment to prs_tim_clock ignored, since the identifier is never used
+WARNING:HDLCompiler:92 - "F:\FPGA\UC_LED_WYSWEITLACZ_V2\uC_led_wyswietlacz\basic_cpu.vhd" Line 150: reset_cpu should be on the sensitivity list of the process
+WARNING:HDLCompiler:92 - "F:\FPGA\UC_LED_WYSWEITLACZ_V2\uC_led_wyswietlacz\basic_cpu.vhd" Line 152: clk_in should be on the sensitivity list of the process
+WARNING:HDLCompiler:92 - "F:\FPGA\UC_LED_WYSWEITLACZ_V2\uC_led_wyswietlacz\basic_cpu.vhd" Line 178: pc should be on the sensitivity list of the process
+WARNING:HDLCompiler:92 - "F:\FPGA\UC_LED_WYSWEITLACZ_V2\uC_led_wyswietlacz\basic_cpu.vhd" Line 184: reset_cpu should be on the sensitivity list of the process
+
+=========================================================================
+*                           HDL Synthesis                               *
+=========================================================================
+
+Synthesizing Unit <basic_cpu>.
+    Related source file is "F:\FPGA\UC_LED_WYSWEITLACZ_V2\uC_led_wyswietlacz\basic_cpu.vhd".
+        ROM_size = 256
+        RAM_size = 64
+        IO_size = 8
+WARNING:Xst:653 - Signal <TIM_PRS> is used but never assigned. This sourceless signal will be automatically connected to value GND.
+WARNING:Xst:3035 - Index value(s) does not match array range for signal <RAM>, simulation mismatch.
+    Found 65x8-bit dual-port RAM <Mram_RAM> for signal <RAM>.
+    Found 8-bit register for signal <sTIM_CNT>.
+    Found 32-bit register for signal <PC>.
+    Found 1-bit register for signal <SR<1>>.
+    Found 1-bit register for signal <clk_cpu>.
+    Found 1-bit register for signal <IO_PERP_SAVE_EN>.
+    Found 8-bit register for signal <ACC>.
+    Found 8-bit register for signal <tmp>.
+    Found 8-bit register for signal <slow_count>.
+    Found 8-bit adder for signal <slow_count[7]_GND_4_o_add_0_OUT> created at line 116.
+    Found 8-bit adder for signal <sTIM_CNT[7]_GND_4_o_add_13_OUT> created at line 1241.
+    Found 8-bit adder for signal <ACC[7]_PC[8]_add_35_OUT> created at line 212.
+    Found 32-bit adder for signal <PC[31]_GND_4_o_add_58_OUT> created at line 260.
+    Found 512x16-bit Read Only RAM for signal <cpu.IR>
+    Found 1-bit 8-to-1 multiplexer for signal <PC[8]_PC[8]_Mux_57_o> created at line 259.
+    Found 1-bit 9-to-1 multiplexer for signal <PC[8]_X_4_o_wide_mux_56_OUT<7>> created at line 259.
+    Found 1-bit 9-to-1 multiplexer for signal <PC[8]_X_4_o_wide_mux_56_OUT<6>> created at line 259.
+    Found 1-bit 9-to-1 multiplexer for signal <PC[8]_X_4_o_wide_mux_56_OUT<5>> created at line 259.
+    Found 1-bit 9-to-1 multiplexer for signal <PC[8]_X_4_o_wide_mux_56_OUT<4>> created at line 259.
+    Found 1-bit 9-to-1 multiplexer for signal <PC[8]_X_4_o_wide_mux_56_OUT<3>> created at line 259.
+    Found 1-bit 9-to-1 multiplexer for signal <PC[8]_X_4_o_wide_mux_56_OUT<2>> created at line 259.
+    Found 1-bit 9-to-1 multiplexer for signal <PC[8]_X_4_o_wide_mux_56_OUT<1>> created at line 259.
+    Found 1-bit 9-to-1 multiplexer for signal <PC[8]_X_4_o_wide_mux_56_OUT<0>> created at line 259.
+    Found 1-bit tristate buffer for signal <IO<3><7>> created at line 89
+    Found 1-bit tristate buffer for signal <IO<3><6>> created at line 89
+    Found 1-bit tristate buffer for signal <IO<3><5>> created at line 89
+    Found 1-bit tristate buffer for signal <IO<3><4>> created at line 89
+    Found 1-bit tristate buffer for signal <IO<3><3>> created at line 89
+    Found 1-bit tristate buffer for signal <IO<3><2>> created at line 89
+    Found 1-bit tristate buffer for signal <IO<3><1>> created at line 89
+    Found 1-bit tristate buffer for signal <IO<3><0>> created at line 89
+    Found 1-bit tristate buffer for signal <IO<7><1>> created at line 89
+WARNING:Xst:737 - Found 1-bit latch for signal <Z_4_o_PC[8]_DLATCH_7_q>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <IO_PERP_SAVE_EN_PC[8]_DLATCH_8_q>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <Z_4_o_PC[8]_DLATCH_9_q>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+    Found 1-bit tristate buffer for signal <IO<8><7>> created at line 89
+WARNING:Xst:737 - Found 1-bit latch for signal <Z_4_o_PC[8]_DLATCH_11_q>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+    Found 1-bit tristate buffer for signal <IO<8><6>> created at line 89
+WARNING:Xst:737 - Found 1-bit latch for signal <Z_4_o_PC[8]_DLATCH_13_q>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+    Found 1-bit tristate buffer for signal <IO<8><5>> created at line 89
+WARNING:Xst:737 - Found 1-bit latch for signal <Z_4_o_PC[8]_DLATCH_15_q>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+    Found 1-bit tristate buffer for signal <IO<8><4>> created at line 89
+WARNING:Xst:737 - Found 1-bit latch for signal <Z_4_o_PC[8]_DLATCH_17_q>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+    Found 1-bit tristate buffer for signal <IO<8><3>> created at line 89
+WARNING:Xst:737 - Found 1-bit latch for signal <Z_4_o_PC[8]_DLATCH_19_q>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+    Found 1-bit tristate buffer for signal <IO<8><2>> created at line 89
+WARNING:Xst:737 - Found 1-bit latch for signal <Z_4_o_PC[8]_DLATCH_21_q>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+    Found 1-bit tristate buffer for signal <IO<8><1>> created at line 89
+WARNING:Xst:737 - Found 1-bit latch for signal <Z_4_o_PC[8]_DLATCH_23_q>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+    Found 1-bit tristate buffer for signal <IO<8><0>> created at line 89
+WARNING:Xst:737 - Found 1-bit latch for signal <IO_PERP_SAVE_EN_PC[8]_DLATCH_24_q>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <Z_4_o_PC[8]_DLATCH_25_q>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+    Found 1-bit tristate buffer for signal <IO<7><7>> created at line 89
+WARNING:Xst:737 - Found 1-bit latch for signal <Z_4_o_PC[8]_DLATCH_27_q>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+    Found 1-bit tristate buffer for signal <IO<7><6>> created at line 89
+WARNING:Xst:737 - Found 1-bit latch for signal <Z_4_o_PC[8]_DLATCH_29_q>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+    Found 1-bit tristate buffer for signal <IO<7><5>> created at line 89
+WARNING:Xst:737 - Found 1-bit latch for signal <Z_4_o_PC[8]_DLATCH_31_q>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+    Found 1-bit tristate buffer for signal <IO<7><4>> created at line 89
+WARNING:Xst:737 - Found 1-bit latch for signal <Z_4_o_PC[8]_DLATCH_33_q>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+    Found 1-bit tristate buffer for signal <IO<7><3>> created at line 89
+WARNING:Xst:737 - Found 1-bit latch for signal <Z_4_o_PC[8]_DLATCH_35_q>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+    Found 1-bit tristate buffer for signal <IO<7><2>> created at line 89
+WARNING:Xst:737 - Found 1-bit latch for signal <Z_4_o_PC[8]_DLATCH_37_q>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+    Found 1-bit tristate buffer for signal <IO<7><1>> created at line 89
+WARNING:Xst:737 - Found 1-bit latch for signal <Z_4_o_PC[8]_DLATCH_39_q>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+    Found 1-bit tristate buffer for signal <IO<7><0>> created at line 89
+WARNING:Xst:737 - Found 1-bit latch for signal <IO_PERP_SAVE_EN_PC[8]_DLATCH_40_q>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <Z_4_o_PC[8]_DLATCH_41_q>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+    Found 1-bit tristate buffer for signal <IO<6><7>> created at line 89
+WARNING:Xst:737 - Found 1-bit latch for signal <Z_4_o_PC[8]_DLATCH_43_q>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+    Found 1-bit tristate buffer for signal <IO<6><6>> created at line 89
+WARNING:Xst:737 - Found 1-bit latch for signal <Z_4_o_PC[8]_DLATCH_45_q>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+    Found 1-bit tristate buffer for signal <IO<6><5>> created at line 89
+WARNING:Xst:737 - Found 1-bit latch for signal <Z_4_o_PC[8]_DLATCH_47_q>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+    Found 1-bit tristate buffer for signal <IO<6><4>> created at line 89
+WARNING:Xst:737 - Found 1-bit latch for signal <Z_4_o_PC[8]_DLATCH_49_q>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+    Found 1-bit tristate buffer for signal <IO<6><3>> created at line 89
+WARNING:Xst:737 - Found 1-bit latch for signal <Z_4_o_PC[8]_DLATCH_51_q>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+    Found 1-bit tristate buffer for signal <IO<6><2>> created at line 89
+WARNING:Xst:737 - Found 1-bit latch for signal <Z_4_o_PC[8]_DLATCH_53_q>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+    Found 1-bit tristate buffer for signal <IO<6><1>> created at line 89
+WARNING:Xst:737 - Found 1-bit latch for signal <Z_4_o_PC[8]_DLATCH_55_q>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+    Found 1-bit tristate buffer for signal <IO<6><0>> created at line 89
+WARNING:Xst:737 - Found 1-bit latch for signal <IO_PERP_SAVE_EN_PC[8]_DLATCH_56_q>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <Z_4_o_PC[8]_DLATCH_57_q>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+    Found 1-bit tristate buffer for signal <IO<5><7>> created at line 89
+WARNING:Xst:737 - Found 1-bit latch for signal <Z_4_o_PC[8]_DLATCH_59_q>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+    Found 1-bit tristate buffer for signal <IO<5><6>> created at line 89
+WARNING:Xst:737 - Found 1-bit latch for signal <Z_4_o_PC[8]_DLATCH_61_q>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+    Found 1-bit tristate buffer for signal <IO<5><5>> created at line 89
+WARNING:Xst:737 - Found 1-bit latch for signal <Z_4_o_PC[8]_DLATCH_63_q>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+    Found 1-bit tristate buffer for signal <IO<5><4>> created at line 89
+WARNING:Xst:737 - Found 1-bit latch for signal <Z_4_o_PC[8]_DLATCH_65_q>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+    Found 1-bit tristate buffer for signal <IO<5><3>> created at line 89
+WARNING:Xst:737 - Found 1-bit latch for signal <Z_4_o_PC[8]_DLATCH_67_q>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+    Found 1-bit tristate buffer for signal <IO<5><2>> created at line 89
+WARNING:Xst:737 - Found 1-bit latch for signal <Z_4_o_PC[8]_DLATCH_69_q>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+    Found 1-bit tristate buffer for signal <IO<5><1>> created at line 89
+WARNING:Xst:737 - Found 1-bit latch for signal <Z_4_o_PC[8]_DLATCH_71_q>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+    Found 1-bit tristate buffer for signal <IO<5><0>> created at line 89
+WARNING:Xst:737 - Found 1-bit latch for signal <IO_PERP_SAVE_EN_PC[8]_DLATCH_72_q>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <Z_4_o_PC[8]_DLATCH_73_q>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+    Found 1-bit tristate buffer for signal <IO<4><7>> created at line 89
+WARNING:Xst:737 - Found 1-bit latch for signal <Z_4_o_PC[8]_DLATCH_75_q>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+    Found 1-bit tristate buffer for signal <IO<4><6>> created at line 89
+WARNING:Xst:737 - Found 1-bit latch for signal <Z_4_o_PC[8]_DLATCH_77_q>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+    Found 1-bit tristate buffer for signal <IO<4><5>> created at line 89
+WARNING:Xst:737 - Found 1-bit latch for signal <Z_4_o_PC[8]_DLATCH_79_q>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+    Found 1-bit tristate buffer for signal <IO<4><4>> created at line 89
+WARNING:Xst:737 - Found 1-bit latch for signal <Z_4_o_PC[8]_DLATCH_81_q>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+    Found 1-bit tristate buffer for signal <IO<4><3>> created at line 89
+WARNING:Xst:737 - Found 1-bit latch for signal <Z_4_o_PC[8]_DLATCH_83_q>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+    Found 1-bit tristate buffer for signal <IO<4><2>> created at line 89
+WARNING:Xst:737 - Found 1-bit latch for signal <Z_4_o_PC[8]_DLATCH_85_q>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+    Found 1-bit tristate buffer for signal <IO<4><1>> created at line 89
+WARNING:Xst:737 - Found 1-bit latch for signal <Z_4_o_PC[8]_DLATCH_87_q>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+    Found 1-bit tristate buffer for signal <IO<4><0>> created at line 89
+WARNING:Xst:737 - Found 1-bit latch for signal <IO_PERP_SAVE_EN_PC[8]_DLATCH_88_q>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <Z_4_o_PC[8]_DLATCH_89_q>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+    Found 1-bit tristate buffer for signal <IO<3><7>> created at line 89
+WARNING:Xst:737 - Found 1-bit latch for signal <Z_4_o_PC[8]_DLATCH_91_q>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+    Found 1-bit tristate buffer for signal <IO<3><6>> created at line 89
+WARNING:Xst:737 - Found 1-bit latch for signal <Z_4_o_PC[8]_DLATCH_93_q>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+    Found 1-bit tristate buffer for signal <IO<3><5>> created at line 89
+WARNING:Xst:737 - Found 1-bit latch for signal <Z_4_o_PC[8]_DLATCH_95_q>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+    Found 1-bit tristate buffer for signal <IO<3><4>> created at line 89
+WARNING:Xst:737 - Found 1-bit latch for signal <Z_4_o_PC[8]_DLATCH_97_q>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+    Found 1-bit tristate buffer for signal <IO<3><3>> created at line 89
+WARNING:Xst:737 - Found 1-bit latch for signal <Z_4_o_PC[8]_DLATCH_99_q>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+    Found 1-bit tristate buffer for signal <IO<3><2>> created at line 89
+WARNING:Xst:737 - Found 1-bit latch for signal <Z_4_o_PC[8]_DLATCH_101_q>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+    Found 1-bit tristate buffer for signal <IO<3><1>> created at line 89
+WARNING:Xst:737 - Found 1-bit latch for signal <Z_4_o_PC[8]_DLATCH_103_q>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+    Found 1-bit tristate buffer for signal <IO<3><0>> created at line 89
+WARNING:Xst:737 - Found 1-bit latch for signal <IO_PERP_SAVE_EN_PC[8]_DLATCH_104_q>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <Z_4_o_PC[8]_DLATCH_105_q>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+    Found 1-bit tristate buffer for signal <IO<2><7>> created at line 89
+WARNING:Xst:737 - Found 1-bit latch for signal <Z_4_o_PC[8]_DLATCH_107_q>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+    Found 1-bit tristate buffer for signal <IO<2><6>> created at line 89
+WARNING:Xst:737 - Found 1-bit latch for signal <Z_4_o_PC[8]_DLATCH_109_q>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+    Found 1-bit tristate buffer for signal <IO<2><5>> created at line 89
+WARNING:Xst:737 - Found 1-bit latch for signal <Z_4_o_PC[8]_DLATCH_111_q>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+    Found 1-bit tristate buffer for signal <IO<2><4>> created at line 89
+WARNING:Xst:737 - Found 1-bit latch for signal <Z_4_o_PC[8]_DLATCH_113_q>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+    Found 1-bit tristate buffer for signal <IO<2><3>> created at line 89
+WARNING:Xst:737 - Found 1-bit latch for signal <Z_4_o_PC[8]_DLATCH_115_q>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+    Found 1-bit tristate buffer for signal <IO<2><2>> created at line 89
+WARNING:Xst:737 - Found 1-bit latch for signal <Z_4_o_PC[8]_DLATCH_117_q>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+    Found 1-bit tristate buffer for signal <IO<2><1>> created at line 89
+WARNING:Xst:737 - Found 1-bit latch for signal <Z_4_o_PC[8]_DLATCH_119_q>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+    Found 1-bit tristate buffer for signal <IO<2><0>> created at line 89
+WARNING:Xst:737 - Found 1-bit latch for signal <IO_PERP_SAVE_EN_PC[8]_DLATCH_120_q>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <Z_4_o_PC[8]_DLATCH_121_q>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+    Found 1-bit tristate buffer for signal <IO<1><7>> created at line 89
+WARNING:Xst:737 - Found 1-bit latch for signal <Z_4_o_PC[8]_DLATCH_123_q>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+    Found 1-bit tristate buffer for signal <IO<1><6>> created at line 89
+WARNING:Xst:737 - Found 1-bit latch for signal <Z_4_o_PC[8]_DLATCH_125_q>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+    Found 1-bit tristate buffer for signal <IO<1><5>> created at line 89
+WARNING:Xst:737 - Found 1-bit latch for signal <Z_4_o_PC[8]_DLATCH_127_q>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+    Found 1-bit tristate buffer for signal <IO<1><4>> created at line 89
+WARNING:Xst:737 - Found 1-bit latch for signal <Z_4_o_PC[8]_DLATCH_129_q>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+    Found 1-bit tristate buffer for signal <IO<1><3>> created at line 89
+WARNING:Xst:737 - Found 1-bit latch for signal <Z_4_o_PC[8]_DLATCH_131_q>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+    Found 1-bit tristate buffer for signal <IO<1><2>> created at line 89
+WARNING:Xst:737 - Found 1-bit latch for signal <Z_4_o_PC[8]_DLATCH_133_q>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+    Found 1-bit tristate buffer for signal <IO<1><1>> created at line 89
+WARNING:Xst:737 - Found 1-bit latch for signal <Z_4_o_PC[8]_DLATCH_135_q>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+    Found 1-bit tristate buffer for signal <IO<1><0>> created at line 89
+WARNING:Xst:737 - Found 1-bit latch for signal <IO_PERP_SAVE_EN_PC[8]_DLATCH_136_q>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <Z_4_o_PC[8]_DLATCH_137_q>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+    Found 1-bit tristate buffer for signal <IO<0><7>> created at line 89
+WARNING:Xst:737 - Found 1-bit latch for signal <Z_4_o_PC[8]_DLATCH_139_q>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+    Found 1-bit tristate buffer for signal <IO<0><6>> created at line 89
+WARNING:Xst:737 - Found 1-bit latch for signal <Z_4_o_PC[8]_DLATCH_141_q>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+    Found 1-bit tristate buffer for signal <IO<0><5>> created at line 89
+WARNING:Xst:737 - Found 1-bit latch for signal <Z_4_o_PC[8]_DLATCH_143_q>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+    Found 1-bit tristate buffer for signal <IO<0><4>> created at line 89
+WARNING:Xst:737 - Found 1-bit latch for signal <Z_4_o_PC[8]_DLATCH_145_q>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+    Found 1-bit tristate buffer for signal <IO<0><3>> created at line 89
+WARNING:Xst:737 - Found 1-bit latch for signal <Z_4_o_PC[8]_DLATCH_147_q>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+    Found 1-bit tristate buffer for signal <IO<0><2>> created at line 89
+WARNING:Xst:737 - Found 1-bit latch for signal <Z_4_o_PC[8]_DLATCH_149_q>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+    Found 1-bit tristate buffer for signal <IO<0><1>> created at line 89
+    Found 1-bit tristate buffer for signal <IO<0><0>> created at line 89
+    Found 9-bit comparator equal for signal <IO[8][7]_GND_4_o_equal_3_o> created at line 119
+    Found 8-bit comparator equal for signal <IO[8][7]_slow_count[7]_equal_4_o> created at line 122
+    Found 8-bit comparator greater for signal <IO[3][7]_IO[4][7]_LessThan_15_o> created at line 155
+    Found 8-bit comparator equal for signal <PC[8]_ACC[7]_equal_39_o> created at line 216
+    Found 8-bit comparator greater for signal <ACC[7]_PC[8]_LessThan_40_o> created at line 218
+    Summary:
+	inferred   2 RAM(s).
+	inferred   4 Adder/Subtractor(s).
+	inferred  67 D-type flip-flop(s).
+	inferred  81 Latch(s).
+	inferred   5 Comparator(s).
+	inferred  43 Multiplexer(s).
+	inferred  81 Tristate(s).
+Unit <basic_cpu> synthesized.
+
+=========================================================================
+HDL Synthesis Report
+
+Macro Statistics
+# RAMs                                                 : 2
+ 512x16-bit single-port Read Only RAM                  : 1
+ 65x8-bit dual-port RAM                                : 1
+# Adders/Subtractors                                   : 4
+ 32-bit adder                                          : 1
+ 8-bit adder                                           : 3
+# Registers                                            : 8
+ 1-bit register                                        : 3
+ 32-bit register                                       : 1
+ 8-bit register                                        : 4
+# Latches                                              : 81
+ 1-bit latch                                           : 81
+# Comparators                                          : 5
+ 8-bit comparator equal                                : 2
+ 8-bit comparator greater                              : 2
+ 9-bit comparator equal                                : 1
+# Multiplexers                                         : 43
+ 1-bit 2-to-1 multiplexer                              : 16
+ 1-bit 8-to-1 multiplexer                              : 1
+ 1-bit 9-to-1 multiplexer                              : 8
+ 32-bit 2-to-1 multiplexer                             : 6
+ 8-bit 2-to-1 multiplexer                              : 12
+# Tristates                                            : 81
+ 1-bit tristate buffer                                 : 81
+
+=========================================================================
+
+=========================================================================
+*                       Advanced HDL Synthesis                          *
+=========================================================================
+
+WARNING:Xst:2677 - Node <tmp_7> of sequential type is unconnected in block <basic_cpu>.
+
+Synthesizing (advanced) Unit <basic_cpu>.
+The following registers are absorbed into counter <sTIM_CNT>: 1 register on signal <sTIM_CNT>.
+INFO:Xst:3218 - HDL ADVISOR - The RAM <Mram_RAM> will be implemented on LUTs either because you have described an asynchronous read or because of currently unsupported block RAM features. If you have described an asynchronous read, making it synchronous would allow you to take advantage of available block RAM resources, for optimized device usage and improved timings. Please refer to your documentation for coding guidelines.
+    -----------------------------------------------------------------------
+    | ram_type           | Distributed                         |          |
+    -----------------------------------------------------------------------
+    | Port A                                                              |
+    |     aspect ratio   | 65-word x 8-bit                     |          |
+    |     clkA           | connected to signal <clk_cpu>       | rise     |
+    |     weA            | connected to internal node          | high     |
+    |     addrA          | connected to signal <cpu.IR<6:0>>   |          |
+    |     diA            | connected to signal <ACC>           |          |
+    |     doA            | connected to internal node          |          |
+    -----------------------------------------------------------------------
+    | Port B                                                              |
+    |     aspect ratio   | 65-word x 8-bit                     |          |
+    |     clkB           | connected to signal <clk_cpu>       | rise     |
+    |     weB            | connected to internal node          | high     |
+    |     addrB          | connected to signal <tmp>           |          |
+    |     diB            | connected to signal <ACC>           |          |
+    -----------------------------------------------------------------------
+INFO:Xst:3218 - HDL ADVISOR - The RAM <Mram_cpu.IR> will be implemented on LUTs either because you have described an asynchronous read or because of currently unsupported block RAM features. If you have described an asynchronous read, making it synchronous would allow you to take advantage of available block RAM resources, for optimized device usage and improved timings. Please refer to your documentation for coding guidelines.
+    -----------------------------------------------------------------------
+    | ram_type           | Distributed                         |          |
+    -----------------------------------------------------------------------
+    | Port A                                                              |
+    |     aspect ratio   | 512-word x 16-bit                   |          |
+    |     weA            | connected to signal <GND>           | high     |
+    |     addrA          | connected to signal <PC<8:0>>       |          |
+    |     diA            | connected to signal <GND>           |          |
+    |     doA            | connected to signal <cpu.IR>        |          |
+    -----------------------------------------------------------------------
+Unit <basic_cpu> synthesized (advanced).
+WARNING:Xst:2677 - Node <tmp_7> of sequential type is unconnected in block <basic_cpu>.
+
+=========================================================================
+Advanced HDL Synthesis Report
+
+Macro Statistics
+# RAMs                                                 : 2
+ 512x16-bit single-port distributed Read Only RAM      : 1
+ 65x8-bit dual-port distributed RAM                    : 1
+# Adders/Subtractors                                   : 3
+ 32-bit adder                                          : 1
+ 8-bit adder                                           : 2
+# Counters                                             : 1
+ 8-bit up counter                                      : 1
+# Registers                                            : 58
+ Flip-Flops                                            : 58
+# Comparators                                          : 5
+ 8-bit comparator equal                                : 2
+ 8-bit comparator greater                              : 2
+ 9-bit comparator equal                                : 1
+# Multiplexers                                         : 42
+ 1-bit 2-to-1 multiplexer                              : 16
+ 1-bit 8-to-1 multiplexer                              : 1
+ 1-bit 9-to-1 multiplexer                              : 8
+ 32-bit 2-to-1 multiplexer                             : 6
+ 8-bit 2-to-1 multiplexer                              : 11
+
+=========================================================================
+
+=========================================================================
+*                         Low Level Synthesis                           *
+=========================================================================
+WARNING:Xst:2677 - Node <PC_9> of sequential type is unconnected in block <basic_cpu>.
+WARNING:Xst:2677 - Node <PC_10> of sequential type is unconnected in block <basic_cpu>.
+WARNING:Xst:2677 - Node <PC_11> of sequential type is unconnected in block <basic_cpu>.
+WARNING:Xst:2677 - Node <PC_12> of sequential type is unconnected in block <basic_cpu>.
+WARNING:Xst:2677 - Node <PC_13> of sequential type is unconnected in block <basic_cpu>.
+WARNING:Xst:2677 - Node <PC_14> of sequential type is unconnected in block <basic_cpu>.
+WARNING:Xst:2677 - Node <PC_15> of sequential type is unconnected in block <basic_cpu>.
+WARNING:Xst:2677 - Node <PC_16> of sequential type is unconnected in block <basic_cpu>.
+WARNING:Xst:2677 - Node <PC_17> of sequential type is unconnected in block <basic_cpu>.
+WARNING:Xst:2677 - Node <PC_18> of sequential type is unconnected in block <basic_cpu>.
+WARNING:Xst:2677 - Node <PC_19> of sequential type is unconnected in block <basic_cpu>.
+WARNING:Xst:2677 - Node <PC_20> of sequential type is unconnected in block <basic_cpu>.
+WARNING:Xst:2677 - Node <PC_21> of sequential type is unconnected in block <basic_cpu>.
+WARNING:Xst:2677 - Node <PC_22> of sequential type is unconnected in block <basic_cpu>.
+WARNING:Xst:2677 - Node <PC_23> of sequential type is unconnected in block <basic_cpu>.
+WARNING:Xst:2677 - Node <PC_24> of sequential type is unconnected in block <basic_cpu>.
+WARNING:Xst:2677 - Node <PC_25> of sequential type is unconnected in block <basic_cpu>.
+WARNING:Xst:2677 - Node <PC_26> of sequential type is unconnected in block <basic_cpu>.
+WARNING:Xst:2677 - Node <PC_27> of sequential type is unconnected in block <basic_cpu>.
+WARNING:Xst:2677 - Node <PC_28> of sequential type is unconnected in block <basic_cpu>.
+WARNING:Xst:2677 - Node <PC_29> of sequential type is unconnected in block <basic_cpu>.
+WARNING:Xst:2677 - Node <PC_30> of sequential type is unconnected in block <basic_cpu>.
+WARNING:Xst:2677 - Node <PC_31> of sequential type is unconnected in block <basic_cpu>.
+WARNING:Xst:2677 - Node <Z_4_o_PC[8]_DLATCH_37_q> of sequential type is unconnected in block <basic_cpu>.
+WARNING:Xst:2677 - Node <Z_4_o_PC[8]_DLATCH_53_q> of sequential type is unconnected in block <basic_cpu>.
+WARNING:Xst:2677 - Node <Z_4_o_PC[8]_DLATCH_69_q> of sequential type is unconnected in block <basic_cpu>.
+WARNING:Xst:2677 - Node <Z_4_o_PC[8]_DLATCH_85_q> of sequential type is unconnected in block <basic_cpu>.
+WARNING:Xst:2677 - Node <Z_4_o_PC[8]_DLATCH_101_q> of sequential type is unconnected in block <basic_cpu>.
+WARNING:Xst:2677 - Node <Z_4_o_PC[8]_DLATCH_23_q> of sequential type is unconnected in block <basic_cpu>.
+WARNING:Xst:2677 - Node <Z_4_o_PC[8]_DLATCH_39_q> of sequential type is unconnected in block <basic_cpu>.
+WARNING:Xst:2677 - Node <Z_4_o_PC[8]_DLATCH_55_q> of sequential type is unconnected in block <basic_cpu>.
+WARNING:Xst:2677 - Node <Z_4_o_PC[8]_DLATCH_71_q> of sequential type is unconnected in block <basic_cpu>.
+WARNING:Xst:2677 - Node <Z_4_o_PC[8]_DLATCH_87_q> of sequential type is unconnected in block <basic_cpu>.
+WARNING:Xst:2677 - Node <Z_4_o_PC[8]_DLATCH_25_q> of sequential type is unconnected in block <basic_cpu>.
+WARNING:Xst:2677 - Node <Z_4_o_PC[8]_DLATCH_73_q> of sequential type is unconnected in block <basic_cpu>.
+WARNING:Xst:2677 - Node <Z_4_o_PC[8]_DLATCH_41_q> of sequential type is unconnected in block <basic_cpu>.
+WARNING:Xst:2677 - Node <Z_4_o_PC[8]_DLATCH_57_q> of sequential type is unconnected in block <basic_cpu>.
+WARNING:Xst:2677 - Node <Z_4_o_PC[8]_DLATCH_89_q> of sequential type is unconnected in block <basic_cpu>.
+WARNING:Xst:2677 - Node <Z_4_o_PC[8]_DLATCH_43_q> of sequential type is unconnected in block <basic_cpu>.
+WARNING:Xst:2677 - Node <Z_4_o_PC[8]_DLATCH_27_q> of sequential type is unconnected in block <basic_cpu>.
+WARNING:Xst:2677 - Node <Z_4_o_PC[8]_DLATCH_59_q> of sequential type is unconnected in block <basic_cpu>.
+WARNING:Xst:2677 - Node <Z_4_o_PC[8]_DLATCH_75_q> of sequential type is unconnected in block <basic_cpu>.
+WARNING:Xst:2677 - Node <Z_4_o_PC[8]_DLATCH_91_q> of sequential type is unconnected in block <basic_cpu>.
+WARNING:Xst:2677 - Node <Z_4_o_PC[8]_DLATCH_29_q> of sequential type is unconnected in block <basic_cpu>.
+WARNING:Xst:2677 - Node <Z_4_o_PC[8]_DLATCH_45_q> of sequential type is unconnected in block <basic_cpu>.
+WARNING:Xst:2677 - Node <Z_4_o_PC[8]_DLATCH_61_q> of sequential type is unconnected in block <basic_cpu>.
+WARNING:Xst:2677 - Node <Z_4_o_PC[8]_DLATCH_77_q> of sequential type is unconnected in block <basic_cpu>.
+WARNING:Xst:2677 - Node <Z_4_o_PC[8]_DLATCH_93_q> of sequential type is unconnected in block <basic_cpu>.
+WARNING:Xst:2677 - Node <Z_4_o_PC[8]_DLATCH_31_q> of sequential type is unconnected in block <basic_cpu>.
+WARNING:Xst:2677 - Node <Z_4_o_PC[8]_DLATCH_47_q> of sequential type is unconnected in block <basic_cpu>.
+WARNING:Xst:2677 - Node <Z_4_o_PC[8]_DLATCH_95_q> of sequential type is unconnected in block <basic_cpu>.
+WARNING:Xst:2677 - Node <Z_4_o_PC[8]_DLATCH_63_q> of sequential type is unconnected in block <basic_cpu>.
+WARNING:Xst:2677 - Node <Z_4_o_PC[8]_DLATCH_79_q> of sequential type is unconnected in block <basic_cpu>.
+WARNING:Xst:2677 - Node <Z_4_o_PC[8]_DLATCH_65_q> of sequential type is unconnected in block <basic_cpu>.
+WARNING:Xst:2677 - Node <Z_4_o_PC[8]_DLATCH_33_q> of sequential type is unconnected in block <basic_cpu>.
+WARNING:Xst:2677 - Node <Z_4_o_PC[8]_DLATCH_49_q> of sequential type is unconnected in block <basic_cpu>.
+WARNING:Xst:2677 - Node <Z_4_o_PC[8]_DLATCH_81_q> of sequential type is unconnected in block <basic_cpu>.
+WARNING:Xst:2677 - Node <Z_4_o_PC[8]_DLATCH_97_q> of sequential type is unconnected in block <basic_cpu>.
+WARNING:Xst:2677 - Node <Z_4_o_PC[8]_DLATCH_35_q> of sequential type is unconnected in block <basic_cpu>.
+WARNING:Xst:2677 - Node <Z_4_o_PC[8]_DLATCH_51_q> of sequential type is unconnected in block <basic_cpu>.
+WARNING:Xst:2677 - Node <Z_4_o_PC[8]_DLATCH_67_q> of sequential type is unconnected in block <basic_cpu>.
+WARNING:Xst:2677 - Node <Z_4_o_PC[8]_DLATCH_83_q> of sequential type is unconnected in block <basic_cpu>.
+WARNING:Xst:2677 - Node <Z_4_o_PC[8]_DLATCH_99_q> of sequential type is unconnected in block <basic_cpu>.
+WARNING:Xst:2677 - Node <IO_PERP_SAVE_EN_PC[8]_DLATCH_56_q> of sequential type is unconnected in block <basic_cpu>.
+WARNING:Xst:2677 - Node <IO_PERP_SAVE_EN_PC[8]_DLATCH_24_q> of sequential type is unconnected in block <basic_cpu>.
+WARNING:Xst:2677 - Node <IO_PERP_SAVE_EN_PC[8]_DLATCH_40_q> of sequential type is unconnected in block <basic_cpu>.
+WARNING:Xst:2677 - Node <IO_PERP_SAVE_EN_PC[8]_DLATCH_72_q> of sequential type is unconnected in block <basic_cpu>.
+WARNING:Xst:2677 - Node <IO_PERP_SAVE_EN_PC[8]_DLATCH_88_q> of sequential type is unconnected in block <basic_cpu>.
+WARNING:Xst:2677 - Node <RAM_FF_512> of sequential type is unconnected in block <basic_cpu>.
+WARNING:Xst:2677 - Node <RAM_FF_513> of sequential type is unconnected in block <basic_cpu>.
+WARNING:Xst:2677 - Node <RAM_FF_514> of sequential type is unconnected in block <basic_cpu>.
+WARNING:Xst:2677 - Node <RAM_FF_515> of sequential type is unconnected in block <basic_cpu>.
+WARNING:Xst:2677 - Node <RAM_FF_516> of sequential type is unconnected in block <basic_cpu>.
+WARNING:Xst:2677 - Node <RAM_FF_517> of sequential type is unconnected in block <basic_cpu>.
+WARNING:Xst:2677 - Node <RAM_FF_518> of sequential type is unconnected in block <basic_cpu>.
+WARNING:Xst:2677 - Node <RAM_FF_519> of sequential type is unconnected in block <basic_cpu>.
+WARNING:Xst:2677 - Node <sTIM_CNT_0> of sequential type is unconnected in block <basic_cpu>.
+WARNING:Xst:2677 - Node <sTIM_CNT_1> of sequential type is unconnected in block <basic_cpu>.
+WARNING:Xst:2677 - Node <sTIM_CNT_2> of sequential type is unconnected in block <basic_cpu>.
+WARNING:Xst:2677 - Node <sTIM_CNT_3> of sequential type is unconnected in block <basic_cpu>.
+WARNING:Xst:2677 - Node <sTIM_CNT_4> of sequential type is unconnected in block <basic_cpu>.
+WARNING:Xst:2677 - Node <sTIM_CNT_5> of sequential type is unconnected in block <basic_cpu>.
+WARNING:Xst:2677 - Node <sTIM_CNT_6> of sequential type is unconnected in block <basic_cpu>.
+WARNING:Xst:2677 - Node <sTIM_CNT_7> of sequential type is unconnected in block <basic_cpu>.
+WARNING:Xst:1293 - FF/Latch <SR_1> has a constant value of 0 in block <basic_cpu>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:2042 - Unit basic_cpu: 8 internal tristates are replaced by logic (pull-up yes): IO<8><0>, IO<8><1>, IO<8><2>, IO<8><3>, IO<8><4>, IO<8><5>, IO<8><6>, IO<8><7>.
+
+Optimizing unit <basic_cpu> ...
+
+Mapping all equations...
+Building and optimizing final netlist ...
+Found area constraint ratio of 100 (+ 5) on block basic_cpu, actual ratio is 50.
+
+Final Macro Processing ...
+
+=========================================================================
+Final Register Report
+
+Macro Statistics
+# Registers                                            : 546
+ Flip-Flops                                            : 546
+
+=========================================================================
+
+=========================================================================
+*                           Partition Report                            *
+=========================================================================
+
+Partition Implementation Status
+-------------------------------
+
+  No Partitions were found in this design.
+
+-------------------------------
+
+=========================================================================
+*                            Design Summary                             *
+=========================================================================
+
+Top Level Output File Name         : basic_cpu.ngc
+
+Primitive and Black Box Usage:
+------------------------------
+# BELS                             : 986
+#      GND                         : 1
+#      INV                         : 6
+#      LUT1                        : 7
+#      LUT2                        : 525
+#      LUT3                        : 26
+#      LUT4                        : 28
+#      LUT5                        : 74
+#      LUT6                        : 282
+#      MUXCY                       : 15
+#      MUXF7                       : 4
+#      VCC                         : 1
+#      XORCY                       : 17
+# FlipFlops/Latches                : 582
+#      FD                          : 9
+#      FDCE                        : 9
+#      FDE                         : 528
+#      LD                          : 36
+# Clock Buffers                    : 2
+#      BUFG                        : 2
+# IO Buffers                       : 26
+#      IBUF                        : 2
+#      OBUFT                       : 24
+
+Device utilization summary:
+---------------------------
+
+Selected Device : 6slx4tqg144-3 
+
+
+Slice Logic Utilization: 
+ Number of Slice Registers:             558  out of   4800    11%  
+ Number of Slice LUTs:                  948  out of   2400    39%  
+    Number used as Logic:               948  out of   2400    39%  
+
+Slice Logic Distribution: 
+ Number of LUT Flip Flop pairs used:    956
+   Number with an unused Flip Flop:     398  out of    956    41%  
+   Number with an unused LUT:             8  out of    956     0%  
+   Number of fully used LUT-FF pairs:   550  out of    956    57%  
+   Number of unique control sets:        73
+
+IO Utilization: 
+ Number of IOs:                          26
+ Number of bonded IOBs:                  26  out of    102    25%  
+    IOB Flip Flops/Latches:              24
+
+Specific Feature Utilization:
+ Number of BUFG/BUFGCTRLs:                2  out of     16    12%  
+
+---------------------------
+Partition Resource Summary:
+---------------------------
+
+  No Partitions were found in this design.
+
+---------------------------
+
+
+=========================================================================
+Timing Report
+
+NOTE: THESE TIMING NUMBERS ARE ONLY A SYNTHESIS ESTIMATE.
+      FOR ACCURATE TIMING INFORMATION PLEASE REFER TO THE TRACE REPORT
+      GENERATED AFTER PLACE-and-ROUTE.
+
+Clock Information:
+------------------
+--------------------------------------------------------+----------------------------------+-------+
+Clock Signal                                            | Clock buffer(FF name)            | Load  |
+--------------------------------------------------------+----------------------------------+-------+
+PC[8]_Decoder_102_OUT<0>(PC[8]_Decoder_102_OUT<0><3>1:O)| NONE(*)(Z_4_o_PC[8]_DLATCH_149_q)| 9     |
+PC[8]_Decoder_102_OUT<2>(PC[8]_Decoder_102_OUT<2><3>1:O)| NONE(*)(Z_4_o_PC[8]_DLATCH_117_q)| 9     |
+PC[8]_Decoder_102_OUT<1>(PC[8]_Decoder_102_OUT<1><3>1:O)| NONE(*)(Z_4_o_PC[8]_DLATCH_133_q)| 9     |
+PC[8]_Decoder_102_OUT<8>(PC[8]_Decoder_102_OUT<8><3>1:O)| NONE(*)(Z_4_o_PC[8]_DLATCH_7_q)  | 9     |
+clk_cpu                                                 | BUFG                             | 537   |
+CLK_in                                                  | IBUF+BUFG                        | 9     |
+--------------------------------------------------------+----------------------------------+-------+
+(*) These 4 clock signal(s) are generated by combinatorial logic,
+and XST is not able to identify which are the primary clock signals.
+Please use the CLOCK_SIGNAL constraint to specify the clock signal(s) generated by combinatorial logic.
+INFO:Xst:2169 - HDL ADVISOR - Some clock signals were not automatically buffered by XST with BUFG/BUFR resources. Please use the buffer_type constraint in order to insert these buffers to the clock signals to help prevent skew problems.
+
+Asynchronous Control Signals Information:
+----------------------------------------
+No asynchronous control signals found in this design
+
+Timing Summary:
+---------------
+Speed Grade: -3
+
+   Minimum period: 8.110ns (Maximum Frequency: 123.308MHz)
+   Minimum input arrival time before clock: 5.332ns
+   Maximum output required time after clock: 4.655ns
+   Maximum combinational path delay: No path found
+
+Timing Details:
+---------------
+All values displayed in nanoseconds (ns)
+
+=========================================================================
+Timing constraint: Default period analysis for Clock 'clk_cpu'
+  Clock period: 8.110ns (frequency: 123.308MHz)
+  Total number of paths / destination ports: 57969 / 1073
+-------------------------------------------------------------------------
+Delay:               8.110ns (Levels of Logic = 6)
+  Source:            PC_0 (FF)
+  Destination:       tmp_1 (FF)
+  Source Clock:      clk_cpu rising
+  Destination Clock: clk_cpu rising
+
+  Data Path: PC_0 to tmp_1
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDCE:C->Q             7   0.447   1.002  PC_0 (PC_0)
+     LUT4:I1->O            1   0.205   0.580  Mram_cpu.IR1121_SW0 (N261)
+     LUT6:I5->O          154   0.205   2.240  Mram_cpu.IR1121 (cpu.IR<5>)
+     LUT3:I0->O           15   0.205   1.086  inst_LPM_MUX1921 (inst_LPM_MUX192)
+     LUT6:I4->O            1   0.203   0.580  inst_LPM_MUX1914 (inst_LPM_MUX1920)
+     LUT6:I5->O            2   0.205   0.845  inst_LPM_MUX1915 (inst_LPM_MUX1921)
+     LUT4:I1->O            1   0.205   0.000  inst_LPM_MUX1101 (_n0411<1>)
+     FDE:D                     0.102          tmp_1
+    ----------------------------------------
+    Total                      8.110ns (1.777ns logic, 6.333ns route)
+                                       (21.9% logic, 78.1% route)
+
+=========================================================================
+Timing constraint: Default period analysis for Clock 'CLK_in'
+  Clock period: 5.110ns (frequency: 195.695MHz)
+  Total number of paths / destination ports: 109 / 9
+-------------------------------------------------------------------------
+Delay:               5.110ns (Levels of Logic = 4)
+  Source:            slow_count_0 (FF)
+  Destination:       slow_count_4 (FF)
+  Source Clock:      CLK_in rising
+  Destination Clock: CLK_in rising
+
+  Data Path: slow_count_0 to slow_count_4
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FD:C->Q               9   0.447   1.077  slow_count_0 (slow_count_0)
+     LUT4:I0->O            1   0.203   0.924  IO[8][7]_GND_4_o_equal_3_o93 (IO[8][7]_GND_4_o_equal_3_o92)
+     LUT6:I1->O            8   0.203   0.803  IO[8][7]_GND_4_o_equal_3_o94 (IO[8][7]_GND_4_o_equal_3_o)
+     LUT2:I1->O            1   0.205   0.944  _n04411 (_n0441)
+     LUT6:I0->O            1   0.203   0.000  Mmux_slow_count[7]_slow_count[7]_mux_5_OUT5 (slow_count[7]_slow_count[7]_mux_5_OUT<4>)
+     FD:D                      0.102          slow_count_4
+    ----------------------------------------
+    Total                      5.110ns (1.363ns logic, 3.747ns route)
+                                       (26.7% logic, 73.3% route)
+
+=========================================================================
+Timing constraint: Default OFFSET IN BEFORE for Clock 'clk_cpu'
+  Total number of paths / destination ports: 1049 / 1049
+-------------------------------------------------------------------------
+Offset:              5.332ns (Levels of Logic = 3)
+  Source:            reset_cpu (PAD)
+  Destination:       RAM_FF_0 (FF)
+  Destination Clock: clk_cpu rising
+
+  Data Path: reset_cpu to RAM_FF_0
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O            15   1.222   1.326  reset_cpu_IBUF (reset_cpu_IBUF)
+     LUT5:I0->O           18   0.203   1.050  BUS_0041661 (BUS_0041)
+     LUT6:I5->O           16   0.205   1.004  BUS_004181 (BUS_0041_8)
+     FDE:CE                    0.322          RAM_FF_64
+    ----------------------------------------
+    Total                      5.332ns (1.952ns logic, 3.380ns route)
+                                       (36.6% logic, 63.4% route)
+
+=========================================================================
+Timing constraint: Default OFFSET IN BEFORE for Clock 'CLK_in'
+  Total number of paths / destination ports: 1 / 1
+-------------------------------------------------------------------------
+Offset:              2.109ns (Levels of Logic = 2)
+  Source:            CLK_in (PAD)
+  Destination:       clk_cpu (FF)
+  Destination Clock: CLK_in rising
+
+  Data Path: CLK_in to clk_cpu
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O             1   1.222   0.580  CLK_in_IBUF (CLK_in_IBUF)
+     LUT5:I4->O            1   0.205   0.000  clk_cpu_rstpot (clk_cpu_rstpot)
+     FD:D                      0.102          clk_cpu
+    ----------------------------------------
+    Total                      2.109ns (1.529ns logic, 0.580ns route)
+                                       (72.5% logic, 27.5% route)
+
+=========================================================================
+Timing constraint: Default OFFSET OUT AFTER for Clock 'PC[8]_Decoder_102_OUT<0>'
+  Total number of paths / destination ports: 16 / 8
+-------------------------------------------------------------------------
+Offset:              4.655ns (Levels of Logic = 2)
+  Source:            IO_PERP_SAVE_EN_PC[8]_DLATCH_136_q (LATCH)
+  Destination:       GPIOA<7> (PAD)
+  Source Clock:      PC[8]_Decoder_102_OUT<0> falling
+
+  Data Path: IO_PERP_SAVE_EN_PC[8]_DLATCH_136_q to GPIOA<7>
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     LD:G->Q               1   0.498   0.579  IO_PERP_SAVE_EN_PC[8]_DLATCH_136_q (IO_PERP_SAVE_EN_PC[8]_DLATCH_136_q)
+     INV:I->O              8   0.206   0.802  IO_PERP_SAVE_EN_PC[8]_DLATCH_136_q_inv1_INV_0 (IO_PERP_SAVE_EN_PC[8]_DLATCH_136_q_inv)
+     OBUFT:T->O                2.571          GPIOA_7_OBUFT (GPIOA<7>)
+    ----------------------------------------
+    Total                      4.655ns (3.275ns logic, 1.380ns route)
+                                       (70.3% logic, 29.7% route)
+
+=========================================================================
+Timing constraint: Default OFFSET OUT AFTER for Clock 'PC[8]_Decoder_102_OUT<1>'
+  Total number of paths / destination ports: 16 / 8
+-------------------------------------------------------------------------
+Offset:              4.655ns (Levels of Logic = 2)
+  Source:            IO_PERP_SAVE_EN_PC[8]_DLATCH_120_q (LATCH)
+  Destination:       GPIOB<7> (PAD)
+  Source Clock:      PC[8]_Decoder_102_OUT<1> falling
+
+  Data Path: IO_PERP_SAVE_EN_PC[8]_DLATCH_120_q to GPIOB<7>
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     LD:G->Q               1   0.498   0.579  IO_PERP_SAVE_EN_PC[8]_DLATCH_120_q (IO_PERP_SAVE_EN_PC[8]_DLATCH_120_q)
+     INV:I->O              8   0.206   0.802  IO_PERP_SAVE_EN_PC[8]_DLATCH_120_q_inv1_INV_0 (IO_PERP_SAVE_EN_PC[8]_DLATCH_120_q_inv)
+     OBUFT:T->O                2.571          GPIOB_7_OBUFT (GPIOB<7>)
+    ----------------------------------------
+    Total                      4.655ns (3.275ns logic, 1.380ns route)
+                                       (70.3% logic, 29.7% route)
+
+=========================================================================
+Timing constraint: Default OFFSET OUT AFTER for Clock 'PC[8]_Decoder_102_OUT<2>'
+  Total number of paths / destination ports: 16 / 8
+-------------------------------------------------------------------------
+Offset:              4.655ns (Levels of Logic = 2)
+  Source:            IO_PERP_SAVE_EN_PC[8]_DLATCH_104_q (LATCH)
+  Destination:       GPIOC<7> (PAD)
+  Source Clock:      PC[8]_Decoder_102_OUT<2> falling
+
+  Data Path: IO_PERP_SAVE_EN_PC[8]_DLATCH_104_q to GPIOC<7>
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     LD:G->Q               1   0.498   0.579  IO_PERP_SAVE_EN_PC[8]_DLATCH_104_q (IO_PERP_SAVE_EN_PC[8]_DLATCH_104_q)
+     INV:I->O              8   0.206   0.802  IO_PERP_SAVE_EN_PC[8]_DLATCH_104_q_inv1_INV_0 (IO_PERP_SAVE_EN_PC[8]_DLATCH_104_q_inv)
+     OBUFT:T->O                2.571          GPIOC_7_OBUFT (GPIOC<7>)
+    ----------------------------------------
+    Total                      4.655ns (3.275ns logic, 1.380ns route)
+                                       (70.3% logic, 29.7% route)
+
+=========================================================================
+
+Cross Clock Domains Report:
+--------------------------
+
+Clock to Setup on destination clock CLK_in
+------------------------+---------+---------+---------+---------+
+                        | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock            |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+------------------------+---------+---------+---------+---------+
+CLK_in                  |    5.110|         |         |         |
+PC[8]_Decoder_102_OUT<8>|         |    6.249|         |         |
+------------------------+---------+---------+---------+---------+
+
+Clock to Setup on destination clock PC[8]_Decoder_102_OUT<0>
+---------------+---------+---------+---------+---------+
+               | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+---------------+---------+---------+---------+---------+
+clk_cpu        |         |         |    4.709|         |
+---------------+---------+---------+---------+---------+
+
+Clock to Setup on destination clock PC[8]_Decoder_102_OUT<1>
+---------------+---------+---------+---------+---------+
+               | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+---------------+---------+---------+---------+---------+
+clk_cpu        |         |         |    4.709|         |
+---------------+---------+---------+---------+---------+
+
+Clock to Setup on destination clock PC[8]_Decoder_102_OUT<2>
+---------------+---------+---------+---------+---------+
+               | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+---------------+---------+---------+---------+---------+
+clk_cpu        |         |         |    4.709|         |
+---------------+---------+---------+---------+---------+
+
+Clock to Setup on destination clock PC[8]_Decoder_102_OUT<8>
+---------------+---------+---------+---------+---------+
+               | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+---------------+---------+---------+---------+---------+
+clk_cpu        |         |         |    4.709|         |
+---------------+---------+---------+---------+---------+
+
+Clock to Setup on destination clock clk_cpu
+---------------+---------+---------+---------+---------+
+               | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+---------------+---------+---------+---------+---------+
+clk_cpu        |    8.110|         |         |         |
+---------------+---------+---------+---------+---------+
+
+=========================================================================
+
+
+Total REAL time to Xst completion: 11.00 secs
+Total CPU time to Xst completion: 11.84 secs
+ 
+--> 
+
+Total memory usage is 4538828 kilobytes
+
+Number of errors   :    0 (   0 filtered)
+Number of warnings :  180 (   0 filtered)
+Number of infos    :    3 (   0 filtered)
+

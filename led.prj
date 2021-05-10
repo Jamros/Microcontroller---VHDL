@@ -1,0 +1,8 @@
+vhdl work "transkoder.vhd"
+vhdl work "mux2.vhd"
+vhdl work "mux1.vhd"
+vhdl work "licznik.vhd"
+vhdl work "BINTO7SEG.vhd"
+vhdl work "sterownik.vhd"
+vhdl work "basic_cpu.vhd"
+vhdl work "led.vhd"
